@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Talking Character</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Talking Character</h1>
+        <div class="character-container">
+            <img id="character" class="character" alt="Talking character">
+            <div class="mouth-overlay" id="mouthOverlay"></div>
+        </div>
+        
+        <div class="controls">
+            <input type="file" id="uploadInput" accept="image/*" hidden>
+            <label for="uploadInput" class="btn file-btn">Choose Image &amp; Generate</label>
+            <!-- Upload input now auto-triggers generation on file selection -->
+
+            <div class="inline-row">
+                <input type="text" id="textInput" placeholder="Enter prompt to generate character..." maxlength="200">
+                <button id="generateBtn" class="btn">Generate Character</button>
+            </div>
+
+            <!-- new: separate speak input for speech text -->
+            <div class="inline-row" style="margin-top:6px;">
+                <input type="text" id="speakInput" placeholder="Enter text to speak..." maxlength="300">
+                <button id="speakBtn" class="btn">Speak</button>
+            </div>
+        </div>
+        
+        <div class="status" id="status">Click "Generate Character" to create your AI character!</div>
+        <div id="loadingOverlay" class="loading-overlay" aria-hidden="true">
+            <div class="loading-card">
+                <div class="spinner large" role="status" aria-label="Loading"></div>
+                <div id="loadingMessage" class="loading-message">Loading...</div>
+            </div>
+        </div>
+        <!-- Gallery of spoken generations -->
+        <div id="gallery" class="gallery" aria-live="polite"></div>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
